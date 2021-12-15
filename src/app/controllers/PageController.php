@@ -3,9 +3,6 @@
 namespace ProyectoWeb\app\controllers;
 
 use Psr\Container\ContainerInterface;
-use ProyectoWeb\entity\ImagenGaleria;
-use ProyectoWeb\entity\Asociado;
-use ProyectoWeb\entity\Categoria;
 use ProyectoWeb\repository\AsociadoRepository;
 use ProyectoWeb\repository\ImagenGaleriaRepository;
 
@@ -78,5 +75,21 @@ class PageController
             ->container
             ->renderer
             ->render($response, "register.view.php", compact('title'));
+    }
+    public function asociados($request, $response, $args)
+    {
+        $title = "Asociados";
+        return $this
+            ->container
+            ->renderer
+            ->render($response, "asociados.view.php", compact('title'));
+    }
+    public function galeria($request, $response, $args)
+    {
+        $title = "Galeria";
+        return $this
+            ->container
+            ->renderer
+            ->render($response, "galeria.view.php", compact('title'));
     }
 }
